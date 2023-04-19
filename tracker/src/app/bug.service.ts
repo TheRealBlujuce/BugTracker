@@ -45,10 +45,10 @@ export class BugService {
   }
 }
 
-// import { Injectable, Output } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+// import { Injectable, EventEmitter, Output } from '@angular/core';
+// import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Bug } from './bug.model';
-// import { Subject } from 'rxjs';
+// import { Observable, Subject } from 'rxjs';
 
 // @Injectable({
 //   providedIn: 'root'
@@ -56,39 +56,68 @@ export class BugService {
 // export class BugService {
 
 //   bugposts: Bug[] = [];
-//   private apiUrl = 'mongodb://willmarda:Icu4MongoDBAtlas@localhost:3000/Bugs'; // replace with your server URL
+//   private apiUrl = 'https://wdd430-b4295-default-rtdb.firebaseio.com/bugs.json';
 //   @Output() bugChangedEvent = new Subject<Bug[]>();
 
 //   constructor(private http: HttpClient) {
 //     this.getBugs();
 //   }
 
-//   getBugs() {
-//     this.http.get<Bug[]>(`${this.apiUrl}/bugposts`)
-//       .subscribe((bugs: Bug[]) => {
-//         this.bugposts = bugs;
-//         this.bugChangedEvent.next(this.bugposts);
-//       });
+//   getBugs(){   
+//       this.http.get<Bug[]>(this.apiUrl)
+//           .subscribe( (bugs: Bug[]) => {
+//           this.bugposts = bugs;
+
+//           this.bugChangedEvent.next(this.bugposts);
+//         },
+//         // error method
+//         (error: any) => {
+//           console.error(error);
+//         }
+//       );
 //   }
 
-//   addBug(bug: Bug): void {
-//     this.http.post(`${this.apiUrl}/bugposts`, bug)
-//       .subscribe(() => {
-//         this.getBugs();
-//       });
+//   storeBugs(Bugs: Bug[]) {
+//     const headers = new HttpHeaders({
+//       'Content-Type': 'application/json'
+//     });
+//     this.http.put(this.apiUrl, JSON.stringify(Bugs), { headers }).subscribe(() => {
+//       this.bugChangedEvent.next(this.bugposts);
+//     });
 //   }
 
-//   updateBug(bug: Bug, newBug: Bug): void {
-//     this.http.put(`${this.apiUrl}/bugposts/${bug.id}`, newBug)
-//       .subscribe(() => {
-//         this.getBugs();
-//       });
+//   deleteBug(Bug: Bug) {
+//     if (!Bug) {
+//       return;
+//     }
+//     const pos = this.bugposts.indexOf(Bug);
+//     if (pos < 0) {
+//       return;
+//     }
+//     this.bugposts.splice(pos, 1);
+//     this.storeBugs(this.bugposts);
 //   }
 
-//   deleteBug(bug: Bug): void {
-//     this.http.delete(`${this.apiUrl}/bugposts/${bug.id}`)
-//       .subscribe(() => {
-//         this.getBugs();
-//       });
+//   addBug(newBug: Bug) {
+//     if (!newBug) {
+//       return;
+//     }
+//     this.bugposts.push(newBug);
+//     let BugsListClone = this.bugposts.slice();
+//     this.storeBugs(BugsListClone);
+//   }
+
+//   updateBug(originalBug: Bug, newBug: Bug) {
+//     if (!originalBug || !newBug) {
+//       return;
+//     }
+//     let pos = this.bugposts.indexOf(originalBug);
+//     if (pos < 0) {
+//       return;
+//     }
+//     newBug.id = originalBug.id;
+//     this.bugposts[pos] = newBug;
+//     let BugsListClone = this.bugposts.slice();
+//     this.storeBugs(BugsListClone);
 //   }
 // }
