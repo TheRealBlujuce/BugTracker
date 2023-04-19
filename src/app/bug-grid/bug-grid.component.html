@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+  <h1>Current Bugs</h1>
+  <div class="bug-grid-container">
+      <div class="bug-grid clicked">
+        <div class="bug-card" *ngFor="let bug of bugs" (click)="onBugCardClick(bug)">
+          <h2>{{ bug.title }}</h2>
+          <p>Created on: {{ bug.dateCreated | date}}</p>
+          <p>Priority: {{ bug.priority }}</p>
+        </div>
+      </div>
+    </div>
+

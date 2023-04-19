@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<body>
+  <div class="container">
+    <div class="col1">
+      <app-bug-detail [selectedBug]="selectedBug"></app-bug-detail>
+    </div>
+    <div class="col2">
+      <app-bug-grid (bugSelected)="selectedBug = $event"></app-bug-grid>
+    </div>
+  </div>
+</body>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<h1 class="card-title">Bug Details <button class="new-btn" (click)="createBug()">Create New Bug</button></h1>
+<div class="bug-detail-container">
+  <div class="button-grid" *ngIf="selectedBug">
+    <button class="edit-btn" (click)="editBug()">Edit</button>
+    <button (click)="deleteBug()">Delete</button>
+  </div>
+
+  <div class="bug-detail">
+
+    <h1 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
+
+    <form *ngIf="isEditMode || isCreating" #bugForm="ngForm">
+      <div class="form-group">
+        <label>Title:</label>
+        <input type="text" #title="ngModel" name="title" placeholder="Enter title" [ngModel]="selectedBug?.title" required>
+        <div *ngIf="title.touched && title.invalid">
+          <h4 style="color: red; margin-top: 12px; font-size: medium;">Please Add a Title</h4>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Priority:</label>
+        <select #priority="ngModel" name="priority" [ngModel]="selectedBug?.priority" required>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <div *ngIf="priority.touched && priority.invalid">
+          <h4 style="color: red; margin-top: 12px; font-size: medium;">Please Select a Priority</h4>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea name="description" placeholder="Enter description" [ngModel]="selectedBug?.description">{{ selectedBug?.description }}</textarea>
+      </div>
+
+      <div class="button-container" *ngIf="isEditMode || isCreating">
+        <button (click)="saveBug(bugForm)">Save</button>
+      </div>
+    </form>
+
+
+    <h3 *ngIf="!isEditMode && !isCreating">Created on:</h3>
+    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.dateCreated }}</h4>
+    <h3 *ngIf="!isEditMode && !isCreating">Priority:</h3>
+    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.priority }}</h4>
+    <h3 *ngIf="!isEditMode && !isCreating">Description:</h3>
+    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.description }}</h4>
+    
+  </div>
+
+</div>

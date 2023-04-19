@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+
+:root {
+    /* import the font gamily */
+    --font: "Noto Sans JP";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* First column takes 1/3 of the space, second column takes 2/3 */
+  
+  justify-content: center; /* Center the columns horizontally */
+  align-content: center; /* Center the rows vertically */
+}
+
+.col1 {
+  padding: 24px;
+  width: 100%;
+}
+
+.col2 {
+  padding: 24px;
+  width: 95%;
+}

@@ -1,0 +1,71 @@
+
+
+.bug-grid-container {
+  height: 640px; /* Set a fixed height for the container */
+  margin-left: -64px;
+  overflow-y: scroll; /* Add the scroll property to enable vertical scrolling */
+}
+
+
+.bug-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    padding: 18px;
+    margin-bottom: 2rem;
+  }
+  
+  .bug-card {
+    font-family: 'Noto Sans JP', sans-serif;
+    /* transition-duration: 0.25s; */
+    transition: all, 0.35s ease-in-out;
+    max-width: 250px;
+    height: 150px;
+    padding: 12px;
+    border-radius: 24px;
+    box-shadow: 0 0 24px #3333332c;
+    background-color: white;
+    color: black;
+    z-index: 0;
+    justify-content: center;
+    align-content: center;
+    
+  }
+
+  .bug-card p{
+    transition-duration: 0.7s;
+    padding-left: 8px; 
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 6px;
+    width: 200px;
+    font-size: 1rem;
+    color: rgb(86, 89, 92);
+  }
+
+  .bug-card h2{
+    padding-left: 8px;
+    margin-top: 6px;
+    font-weight: 900;
+    font-size: 1rem;
+
+  }
+
+  .bug-card:hover{
+    /* transition-duration: 0.75s; */
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    scale: 1.12;
+    z-index: 100;
+    
+  }
+
+  .bug-card:hover p {
+    transition-duration: 0.7s;
+    color: white;
+  }
+
+  h1{
+    font-family: 'Noto Sans JP', sans-serif;
+  }

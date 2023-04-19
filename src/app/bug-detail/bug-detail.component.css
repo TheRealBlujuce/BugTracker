@@ -1,0 +1,135 @@
+.bug-detail-container {
+  padding: 32px;
+  background-color: white;
+  width: 85%;
+  height: 80%;
+  border-radius: 32px;
+  /* box-shadow: 0 0 24px #33333393; */
+  border: 1px solid rgb(221, 221, 221)
+}
+
+h1, h3, h4, button, label, .bug-detail input[type=text], .bug-detail select, .bug-detail textarea {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h3 {
+  margin-top: -12px;
+  font-size: x-large;
+}
+
+h4 {
+  color: rgb(86, 89, 92);
+  font-style: italic;
+  font-size: larger;
+  margin-top: -16px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 12px;
+  margin-left: 33rem;
+  margin-top: -16px;
+}
+
+.button-grid button {
+  transition-duration: 0.5s;
+  border: 0px;
+  background-color: white;
+  border-radius: 22px;
+  padding: 18px;
+  width: 132px;
+  font-size: 1.05rem;
+  box-shadow: 0 0 24px #33333338;
+}
+
+.button-grid button:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.new-btn {
+  transition-duration: 0.5s;
+  border: 0px;
+  margin-left: 29rem;
+  background-color: white;
+  border-radius: 22px;
+  padding: 18px;
+  width: 232px;
+  font-size: 1.05rem;
+  box-shadow: 0 0 24px #33333338;
+}
+
+.new-btn:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  scale: 1.1;
+}
+
+/* styles for the edit/create form */
+.bug-detail input[type=text], .bug-detail select, .bug-detail textarea {
+  width: 100%;
+  padding: 12px;
+  border: 0px solid #ccc;
+  border-radius: 16px;
+  font-size: 18px;
+  box-sizing: border-box;
+  background-color: rgb(236, 238, 243);;
+  color: black;
+  resize: none;
+}
+
+.form-group input[type=text]:required, 
+.form-group select:required {
+  border: 4px solid red;
+  outline:none;
+}
+
+.form-group textarea {
+  outline: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.button-container {
+    
+  display: flex;
+  justify-content: flex-start; /* align buttons to the right side */
+  align-items: center; /* vertically center the buttons */
+  position: absolute;
+  top: 680px;
+  left: 64px;
+}
+
+.button-container button {
+  transition-duration: 0.5s;
+  margin-left: 1rem; /* add some space between the buttons */
+  border: 0px;
+  background-color: white;
+  border-radius: 24px;
+  padding: 24px;
+  width: 364px;
+  font-size: 1.05rem;
+  box-shadow: 0 0 24px #33333338;
+}
+
+.button-container button:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  scale: 1.1;
+}
+
