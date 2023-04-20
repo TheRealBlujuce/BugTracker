@@ -34,12 +34,12 @@ export class BugDetailComponent implements OnInit {
   }
 
   createBug() {
-    if (this.previousBug == null) {
+    if (this.previousBug == null || this.previousBug != null) {
       this.previousBug = this.selectedBug;
-      console.log(this.previousBug)
+      // console.log(this.previousBug)
     }
     this.selectedBug = this.isCreating ? this.previousBug : null;
-    this.isCreating = !this.isCreating;
+    this.isCreating = true;
   }
 
   saveBug(form: NgForm) {
@@ -85,7 +85,7 @@ export class BugDetailComponent implements OnInit {
       this.bugService.updateBug(this.selectedBug, this.newBug);
 
       this.selectedBug = this.newBug;
-      console.log(this.selectedBug);
+      // console.log(this.selectedBug);
 
     }
     this.isEditMode = false;
@@ -100,8 +100,22 @@ export class BugDetailComponent implements OnInit {
   }
 
   editBug() {
-   
-
-    this.isEditMode = !this.isEditMode;
+    this.isEditMode = true;
   }
+
+  cancelEdit()
+  {
+    if (this.isEditMode){ this.isEditMode = false; }
+    
+    if (this.isCreating)
+    {
+      this.isCreating = false;
+      if (this.previousBug != null) 
+      { 
+        this.selectedBug = this.previousBug;
+      }
+    }
+    // console.log("Canceled Edit/Create Bug")
+  }
+  
 }
