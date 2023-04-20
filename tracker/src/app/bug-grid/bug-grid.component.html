@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-  <h1>Current Bugs</h1>
-  <div class="bug-grid-container">
-      <div class="bug-grid clicked">
-        <div class="bug-card" *ngFor="let bug of bugs" (click)="onBugCardClick(bug)">
-          <h2>{{ bug.title }}</h2>
-          <p>Created on: {{ bug.dateCreated | date}}</p>
-          <p>Priority: {{ bug.priority }}</p>
+  <h1 class="font-semibold text-4xl mt-[12px]">Current Bugs</h1>
+  <div class="w-[964px] ml-[22px]">
+    <!-- End of Main Component Div -->
+      <div class="h-[732px] grid gap-x-[24px] gap-y-[16px] pt-9 p-8 grid-cols-3 overflow-y-auto">
+        <!-- End of Grid Div -->
+        <div class="
+          text-black w-[280px] h-[175px] p-[12px] rounded-[24px] shadow-lg bg-white flex justify-center items-center transition-all duration-[0.45s] ease-in-out scale-100 group
+          
+          hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100" 
+
+         *ngFor="let bug of bugs" (click)="onBugCardClick(bug)"
+         > 
+        <!-- End of Card Div -->
+          <div class="flex flex-col pl-[12px] mb-[16px]">
+
+            <h2 class="font-bold text-lg transition duration-[0.25s] w-[250px] h-10 mb-[48px]">{{ bug.title }}</h2>
+            <!-- End of h2 Bug Title Tag -->
+            <p  class="
+            font-semibold italic text-gray-500 w-40 text-base transition duration-[0.25s] w-[200px]
+
+            group-hover:text-white transition duration-[0.25s]"
+            >Created on: {{ bug.dateCreated | date}}</p>
+            <!-- End of Date Created Tag -->
+            <p  class="
+            font-semibold italic text-gray-500 w-40 text-base transition duration-[0.25s] w-[200px]
+
+            group-hover:text-white transition duration-[0.25s]"
+            >Priority: {{ bug.priority }}</p>
+            <!-- End of Priority Tag -->
+          </div>
+
         </div>
       </div>
     </div>

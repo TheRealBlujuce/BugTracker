@@ -17,7 +17,7 @@ export class BugGridComponent implements OnInit, OnDestroy{
   constructor(public bugService: BugService) { }
 
   ngOnInit() {
-    // this.bugService.getBugs();
+    this.bugService.getBugs();
     this.bugSubscription = this.bugService.bugChangedEvent
     .subscribe(
       (bugs: Bug[]) => {

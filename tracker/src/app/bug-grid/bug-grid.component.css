@@ -1,23 +1,21 @@
-
-
-.bug-grid-container {
-  height: 640px; /* Set a fixed height for the container */
+/* .bug-grid-container {
+  height: 640px;
   margin-left: -64px;
-  overflow-y: scroll; /* Add the scroll property to enable vertical scrolling */
-}
+  overflow-y: scroll;
+} */
 
 
-.bug-grid {
+/* .bug-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 1fr));
     grid-gap: 1rem;
     padding: 18px;
     margin-bottom: 2rem;
-  }
+  } */
   
-  .bug-card {
+  /* .bug-card {
     font-family: 'Noto Sans JP', sans-serif;
-    /* transition-duration: 0.25s; */
+    transition-duration: 0.25s;
     transition: all, 0.35s ease-in-out;
     max-width: 250px;
     height: 150px;
@@ -30,9 +28,9 @@
     justify-content: center;
     align-content: center;
     
-  }
+  } */
 
-  .bug-card p{
+  /* .bug-card p{
     transition-duration: 0.7s;
     padding-left: 8px; 
     font-weight: 500;
@@ -49,23 +47,22 @@
     font-weight: 900;
     font-size: 1rem;
 
-  }
+  } */
 
-  .bug-card:hover{
+  /* .bug-card:hover{
     /* transition-duration: 0.75s; */
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    /* color: white;
     cursor: pointer;
     scale: 1.12;
     z-index: 100;
-    
-  }
+  } */
 
-  .bug-card:hover p {
+  /* .bug-card:hover p {
     transition-duration: 0.7s;
     color: white;
   }
 
   h1{
     font-family: 'Noto Sans JP', sans-serif;
-  }
+  } */
