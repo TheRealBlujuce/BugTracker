@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <body>
-  <div class="container">
-    <div class="col1">
-      <app-bug-detail [selectedBug]="selectedBug"></app-bug-detail>
-    </div>
-    <div class="col2">
-      <app-bug-grid (bugSelected)="selectedBug = $event"></app-bug-grid>
-    </div>
+  <div class="grid grid-cols-2 w-auto justify-content-center content-center">
+    
+      <app-bug-detail class="mx-auto ml-6" [selectedBug]="selectedBug"></app-bug-detail>
+    
+    
+      <app-bug-grid class="mx-auto" (bugSelected)="selectedBug = $event"></app-bug-grid>
+    
   </div>
 </body>
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <div class="flex flex-row">
-  <h1 class="font-semibold text-4xl mt-[12px] p-[12px]">Bug Details </h1>
+  <h1 class="font-semibold text-4xl mt-[24px] p-[12px]">Bug Details </h1>
   
   <!-- Create New Bug Button -->
   <button *ngIf="!isEditMode && !isCreating" class="
-    absolute ml-[536px] mt-[24px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+    absolute 3xl:ml-[536px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
             
     hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100" 
 
@@ -16,9 +16,9 @@
 </div>
 
 
-<div class="w-[848px] h-[700px] bg-white rounded-[24px] mt-[36px]">
+<div class="w-auto h-[700px] bg-white rounded-[24px] mt-[20px]">
 
-  <div class="absolute flex flex-row gap-x-[16px] ml-[356px] mt-[600px] pt-[24px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
+  <div class="absolute flex flex-row gap-x-[16px] ml-[300px] mt-[600px] pt-[24px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
         font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
@@ -44,9 +44,9 @@
   
   <div class="pt-[18px] p-[22px]">
 
-    <h1 class="font-semibold text-black text-4xl w-[696px]" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
+    <h1 class="font-semibold text-black text-4xl w-[696px] pb-12" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
 
-    <!-- End of bug Title -->
+    <!-- End of But Title -->
 
     <!-- Beggining of Form -->
     <form *ngIf="isEditMode || isCreating" #bugForm="ngForm" class="pt-[24px] flex flex-col gap-8">
@@ -122,12 +122,17 @@
     </form>
 
 
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug">Created on:</h3>
-    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.dateCreated }}</h4>
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug">Priority:</h3>
-    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.priority }}</h4>
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug">Description:</h3>
-    <h4 *ngIf="!isEditMode && !isCreating">{{ selectedBug?.description }}</h4>
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-xl text-black pt-[8px]">Created on:</h3>
+
+    <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-base text-gray-500 pt-[8px]">{{ selectedBug?.dateCreated }}</h4>
+
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-xl text-black pt-[8px]">Priority:</h3>
+
+    <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-base text-gray-500 pt-[8px]">{{ selectedBug?.priority }}</h4>
+
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-xl text-black pt-[8px]">Description:</h3>
+
+    <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-base text-gray-500 pt-[8px]">{{ selectedBug?.description }}</h4>
     
   </div>
 
