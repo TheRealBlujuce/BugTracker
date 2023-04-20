@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <div class="flex flex-row">
-  <h1 class="font-semibold text-4xl mt-[12px]">Bug Details </h1>
+  <h1 class="font-semibold text-4xl mt-[12px] p-[12px]">Bug Details </h1>
   
+  <!-- Create New Bug Button -->
   <button *ngIf="!isEditMode && !isCreating" class="
-    ml-[336px] mt-[6px] font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+    absolute ml-[536px] mt-[24px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
             
     hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100" 
 
     (click)="createBug()">
     Create New Bug
   </button>
-  <!-- End of Create Bug Button -->
+  <!-- End of Create New Bug Button -->
 
 </div>
 
 
-<div class="w-[800px] h-[700px] bg-white rounded-[24px] mt-[24px]">
+<div class="w-[848px] h-[700px] bg-white rounded-[24px] mt-[36px]">
 
   <div class="absolute flex flex-row gap-x-[16px] ml-[356px] mt-[600px] pt-[24px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
