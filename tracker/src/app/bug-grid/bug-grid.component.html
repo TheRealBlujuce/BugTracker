@@ -1,8 +1,8 @@
 <!DOCTYPE html>
   <h1 class="font-semibold text-4xl mt-[24px] p-[12px] 2xl:ml-[-48px] lg:ml-[32px]">Current Bugs</h1>
-  <div class="2xl:h-[780px] 2xl:w-[932px] lg:w-[656px] lg:h-[742px]">
+  <div class="2xl:h-[780px] 2xl:w-[932px] lg:w-[676px] lg:h-[742px]">
     <!-- End of Main Component Div -->
-      <div class="h-[716px] grid 2xl:gap-x-[12px] lg:gap-x-[6px] gap-y-[20px]  lg:pl-[48px] lg:pr-[48px] lg:pb-[24px] 2xl:ml-[-64px] 2xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 pt-12 overflow-y-auto">
+      <div class="h-[716px] grid 2xl:gap-x-[12px] lg:gap-x-[12px] gap-y-[20px] lg:pl-[50px] lg:pr-[50px] lg:pb-[24px] 2xl:ml-[-64px] lg:ml-[16px] 2xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 pt-12 overflow-y-auto">
 
         <!-- End of Grid Div -->
 
@@ -18,16 +18,16 @@
           <div class="flex flex-col pl-[12px] mb-[16px]">
 
             <h2 class="font-bold text-lg w-[250px] h-10 mb-[48px] group-hover:text-white transition duration-[0.01s]">{{ bug.title }}</h2>
-        <p  class="
-            font-semibold italic text-gray-500 w-40 text-base transition duration-[0.25s] w-[200px]
+            <p  class="
+            font-semibold italic text-gray-500 w-40 text-base w-[200px]
 
-            group-hover:text-white transition duration-[0.25s]"
+            group-hover:text-white transition duration-[0.35s]"
             >Created on: {{ bug.dateCreated | date}}</p>
             <!-- End of Date Created Tag -->
             <p  class="
-            font-semibold italic text-gray-500 w-40 text-base transition duration-[0.25s] w-[200px]
+            font-semibold italic text-gray-500 w-40 text-base w-[200px]
 
-            group-hover:text-white transition duration-[0.25s]"
+            group-hover:text-white transition duration-[0.4s]"
             >Priority: {{ bug.priority }}</p>
             <!-- End of Priority Tag -->
           </div>
