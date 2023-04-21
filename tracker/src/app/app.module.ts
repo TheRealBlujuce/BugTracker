@@ -12,6 +12,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 import { AppLoginFormComponent } from './app-login-form/app-login-form.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 
 const firebaseConfig = {
@@ -31,7 +32,8 @@ const firebaseConfig = {
     AppComponent,
     BugGridComponent,
     BugDetailComponent,
-    AppLoginFormComponent
+    AppLoginFormComponent,
+    LogoutButtonComponent
   ],
   imports: [
     BrowserModule,
