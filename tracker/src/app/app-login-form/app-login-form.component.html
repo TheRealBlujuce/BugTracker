@@ -1,7 +1,7 @@
-<form class="mx-auto max-w-[640px] w-full h-[480px] bg-white mt-[200px] shadow-3xl rounded-[24px] border">
+<form class="mx-auto max-w-[640px] w-full h-[480px] bg-white/[.5] backdrop-blur-sm mt-[200px] shadow-3xl rounded-[24px]">
     <div class="p-12">
         
-        <h1 class="text-black font-semibold text-4xl text-center">Login</h1>
+        <h1 class="text-black/[.85] font-semibold text-4xl text-center">Login</h1>
         <h4 *ngIf="hasError" class="p-[9px] font-semibold text-lg text-pink-600 ml-[132px]">Email or Password is Incorrect.</h4>
 
         <div class="mb-4">
@@ -11,7 +11,7 @@
                 </label>
             
             <input [(ngModel)]="email" placeholder="123@email.com" class="
-                w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black z-0 {{ hasError ? 'border-2 border-pink-500' : '' }}" type="email" id="email" name="email" required>
+                w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black/[.85] z-0 {{ hasError ? 'border-2 border-pink-500' : '' }}" type="email" id="email" name="email" required>
 
         </div>
         <div class="mb-6">
@@ -19,13 +19,13 @@
                 Password
             </label>
             <input [(ngModel)]="password" placeholder="Password" class="
-            w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black {{ hasError ? 'border-2 border-pink-500' : '' }}" type="password" id="password" name="password" required>
+            w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black/[.85] {{ hasError ? 'border-2 border-pink-500' : '' }}" type="password" id="password" name="password" required>
 
         </div>
             <button (click)="onSignIn()" [disabled]="!email || !password" class="
-                absolute sm:ml-[100px] md:ml-[100px] mt-[32px] font-medium text-xl text-white max-w-[332px] w-full h-[56px] p-[12px] rounded-[56px] shadow-lg enabled:bg-[#087f5b] disabled: bg-gray-500 flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+                absolute sm:ml-[100px] md:ml-[100px] mt-[32px] font-medium text-xl text-white max-w-[332px] w-full h-[56px] p-[12px] rounded-[56px] shadow-lg enabled:bg-[#087f5b]/[.5] disabled: bg-gray-500/[.35] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
 
-                enabled:hover:bg-[#37b24d] enabled:hover:text-white enabled:hover:cursor-pointer enabled:hover:scale-[1.12] enabled:hover:z-100 enabled:hover:transition-all ease-in-out">
+                enabled:hover:bg-[#37b24d]/[.75] enabled:hover:text-white enabled:hover:cursor-pointer enabled:hover:scale-[1.12] enabled:hover:z-100 enabled:hover:transition-all ease-in-out">
                 Login
             </button>
 
