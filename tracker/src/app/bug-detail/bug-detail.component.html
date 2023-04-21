@@ -18,6 +18,7 @@
 
 <div class="2xl:w-[896px] lg:w-auto h-[776px] bg-white rounded-[24px] mt-[20px] border-2">
 
+  <!-- Edit and Delete Button Container -->
   <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[432px] lg:ml-[300px] mt-[680px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
@@ -99,7 +100,7 @@
  
 
       <!-- Save and Cancel Buttons For Form -->
-      <div class="absolute flex flex-row gap-x-[24px] mt-[580px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
+      <div class="absolute flex flex-row gap-x-[24px] mt-[638px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
 
         <button (click)="saveBug(bugForm)" class="
           font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
