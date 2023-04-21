@@ -4,9 +4,9 @@
   
   <!-- Create New Bug Button -->
   <button *ngIf="!isEditMode && !isCreating" class="
-    absolute xl:ml-[536px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+    absolute 2xl:ml-[632px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
             
-    hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100" 
+    hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
 
     (click)="createBug()">
     Create New Bug
@@ -16,14 +16,14 @@
 </div>
 
 
-<div class="xl:w-[900px] lg:w-auto h-[700px] bg-white rounded-[24px] mt-[20px]">
+<div class="2xl:w-[896px] lg:w-auto h-[700px] bg-white rounded-[24px] mt-[20px]">
 
-  <div class="absolute flex flex-row gap-x-[16px] ml-[300px] mt-[600px] pt-[24px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
+  <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[456px] lg:ml-[300px] mt-[624px]  z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
         font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
               
-        hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100"
+        hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out"
 
         (click)="editBug()">
         Edit
@@ -33,7 +33,7 @@
     <button class="
       font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
               
-      hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100" 
+      hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
       (click)="deleteBug()">
       Delete
     </button>
@@ -60,7 +60,7 @@
         
         <div class="form-group">
           <input type="text" #title="ngModel" name="title" placeholder="Enter title" [ngModel]="selectedBug?.title" required class="
-          font-semibold text-xl text-black w-[696px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500 invalid:text-pink-600">
+          font-semibold text-xl text-black 2xl:w-[848px] lg:w-[696px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500 invalid:text-pink-600">
         </div>
       </div>
       
@@ -71,7 +71,7 @@
 
         <div class="form-group">
           <select #priority="ngModel" name="priority" [ngModel]="selectedBug?.priority" required class="appearance-none focus:outline-none
-          font-semibold text-xl text-black w-[676px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
+          font-semibold text-xl text-black 2xl:w-[848px] lg:w-[676px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
 
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -92,7 +92,7 @@
 
         <div class="form-group">
           <textarea name="description" placeholder="Enter description" [ngModel]="selectedBug?.description" class="appearance-none resize-none
-            font-semibold text-xl text-black w-[632px] h-[200px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
+            font-semibold text-xl text-black 2xl:w-[848px] lg:w-[632px] xl:h-[248px] lg:h-[200px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
 
             {{ selectedBug?.description }}
           </textarea>
@@ -101,19 +101,19 @@
  
 
       <!-- Save and Cancel Buttons For Form -->
-      <div class="absolute flex flex-row gap-x-[16px] mt-[570px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
+      <div class="absolute flex flex-row gap-x-[24px] mt-[570px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
 
         <button (click)="saveBug(bugForm)" class="
           font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
                 
-          hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100">
+          hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Save
         </button>
 
         <button (click)="cancelEdit()" class="
           font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
                 
-          hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100">
+          hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Cancel
         </button>
 
