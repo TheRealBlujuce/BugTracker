@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
+import { AppLoginFormComponent } from './app-login-form/app-login-form.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 
 const firebaseConfig = {
@@ -28,13 +30,15 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     BugGridComponent,
-    BugDetailComponent
+    BugDetailComponent,
+    AppLoginFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [BugService],
   bootstrap: [AppComponent]

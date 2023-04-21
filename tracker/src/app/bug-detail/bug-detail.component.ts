@@ -13,6 +13,8 @@ export class BugDetailComponent implements OnInit {
   @Input() selectedBug: Bug | null = null;
   @Input() previousBug: Bug | null = null;
   @Output() bugCreated = new EventEmitter<Bug>();
+  @Output() isEditingBug = new EventEmitter<boolean>();
+
   newBug: Bug = {
     id: '',
     title: '',
@@ -34,12 +36,18 @@ export class BugDetailComponent implements OnInit {
   }
 
   createBug() {
-    if (this.previousBug == null || this.previousBug != null) {
-      this.previousBug = this.selectedBug;
-      // console.log(this.previousBug)
+
+    if(!this.isCreating)
+    {
+      if (this.previousBug == null || this.previousBug != null) {
+        this.previousBug = this.selectedBug;
+        // console.log(this.previousBug)
+      }
+      this.selectedBug = null;
+      this.isCreating = true;
     }
-    this.selectedBug = this.isCreating ? this.previousBug : null;
-    this.isCreating = true;
+    this.isEditingBug.emit(this.isCreating);
+
   }
 
   saveBug(form: NgForm) {
@@ -101,11 +109,16 @@ export class BugDetailComponent implements OnInit {
 
   editBug() {
     this.isEditMode = true;
+    this.isEditingBug.emit(this.isEditMode);
   }
 
   cancelEdit()
   {
-    if (this.isEditMode){ this.isEditMode = false; }
+    if (this.isEditMode)
+    { 
+      this.isEditMode = false; 
+      this.isEditingBug.emit(this.isEditMode);
+    }
     
     if (this.isCreating)
     {
@@ -114,6 +127,7 @@ export class BugDetailComponent implements OnInit {
       { 
         this.selectedBug = this.previousBug;
       }
+      this.isEditingBug.emit(this.isCreating);
     }
     // console.log("Canceled Edit/Create Bug")
   }

@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'bug-tracker';
 
   selectedBug: Bug | null = null;
-
+  editingBug: boolean = false;
+  isLoggedIn = false;
 
   onBugSelected(bug: Bug) {
     this.selectedBug = bug;

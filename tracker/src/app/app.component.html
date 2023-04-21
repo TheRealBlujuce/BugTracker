@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <body>
-  <div class="grid grid-cols-2 w-auto justify-content-center content-center">
-    
-      <app-bug-detail class="mx-auto ml-6" [selectedBug]="selectedBug"></app-bug-detail>
-    
-    
-      <app-bug-grid class="mx-auto" (bugSelected)="selectedBug = $event"></app-bug-grid>
-    
-  </div>
+  <ng-container *ngIf="isLoggedIn; else loginForm">
+    <div class="grid grid-cols-2 w-auto justify-content-center content-center">
+      <app-bug-detail class="mx-auto ml-6" (isEditingBug)="editingBug = $event" [selectedBug]="selectedBug"></app-bug-detail>
+      <app-bug-grid class="mx-auto" (bugSelected)="selectedBug = $event" [isEditing]="editingBug"></app-bug-grid>
+    </div>
+  </ng-container>
+  
+  <ng-template #loginForm>
+    <app-login-form (loggedIn)="isLoggedIn = true"></app-login-form>
+  </ng-template>
 </body>
+
+<!-- <body>
+  <div class="grid grid-cols-2 w-auto justify-content-center content-center">
+      <app-bug-detail class="mx-auto ml-6" [selectedBug]="selectedBug"></app-bug-detail>
+      <app-bug-grid class="mx-auto" (bugSelected)="selectedBug = $event"></app-bug-grid>
+  </div>
+</body> -->
 

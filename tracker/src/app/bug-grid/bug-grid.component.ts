@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, OnDestroy, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, OnDestroy, Output, Input } from '@angular/core';
 import { Bug } from '../bug.model';
 import { BugService } from '../bug.service';
 import { Subscription } from 'rxjs';
@@ -11,12 +11,15 @@ import { Subscription } from 'rxjs';
 export class BugGridComponent implements OnInit, OnDestroy{
 
   @Output() bugSelected = new EventEmitter<Bug>();
+  @Input() isEditing: boolean = false;
+
   bugs: Bug[] = [];
   private bugSubscription: Subscription = new Subscription;
     
   constructor(public bugService: BugService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.bugService.getBugs();
     this.bugSubscription = this.bugService.bugChangedEvent
     .subscribe(
@@ -25,13 +28,19 @@ export class BugGridComponent implements OnInit, OnDestroy{
       })
   }
 
-  ngOnDestroy() {
+  ngOnDestroy() 
+  {
       this.bugSubscription.unsubscribe();
   }
 
-    // Define the onBugCardClick method to set the selected bug and show the detail view
-    onBugCardClick(bug: Bug) {
-    this.bugSelected.emit(bug); // Emit an event with the selected bug
+  // Define the onBugCardClick method to set the selected bug and show the detail view
+  onBugCardClick(bug: Bug) 
+  {
+    if(!this.isEditing)
+    {
+      this.bugSelected.emit(bug); // Emit an event with the selected bug
+    }
+    
   }
 }
 
