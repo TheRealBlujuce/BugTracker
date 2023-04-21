@@ -98,6 +98,7 @@ export class BugDetailComponent implements OnInit {
     }
     this.isEditMode = false;
     this.isCreating = false;
+    this.isEditingBug.emit(this.isEditMode)
   }
 
   deleteBug() {
