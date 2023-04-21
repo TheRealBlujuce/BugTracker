@@ -10,7 +10,7 @@
                     Email
                 </label>
             
-            <input [(ngModel)]="email" class="
+            <input [(ngModel)]="email" placeholder="123@email.com" class="
                 w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black z-0 {{ hasError ? 'border-2 border-pink-500' : '' }}" type="email" id="email" name="email" required>
 
         </div>
@@ -18,7 +18,7 @@
             <label class="block font-bold mb-2" for="password">
                 Password
             </label>
-            <input [(ngModel)]="password" class="
+            <input [(ngModel)]="password" placeholder="Password" class="
             w-full h-[56px] px-3 py-2 border rounded-[16px] font-semibold text-xl text-black {{ hasError ? 'border-2 border-pink-500' : '' }}" type="password" id="password" name="password" required>
 
         </div>
