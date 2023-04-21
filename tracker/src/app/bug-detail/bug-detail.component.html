@@ -4,7 +4,7 @@
   
   <!-- Create New Bug Button -->
   <button *ngIf="!isEditMode && !isCreating" class="
-    absolute 2xl:ml-[632px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+    absolute 2xl:ml-[632px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
             
     hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
 
@@ -16,13 +16,13 @@
 </div>
 
 
-<div class="2xl:w-[896px] lg:w-auto 2xl:h-[776px] lg:h-[764px] bg-white rounded-[24px] mt-[20px] border-2">
+<div class="2xl:w-[896px] lg:w-[748px] 2xl:h-[776px] lg:h-[680px] bg-white rounded-[24px] mt-[20px] border-2">
 
   <!-- Edit and Delete Button Container -->
-  <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[432px] lg:ml-[300px] mt-[680px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
+  <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[432px] lg:ml-[296px] 2xl:mt-[680px] lg:mt-[676px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
-        font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+        font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
               
         hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out"
 
@@ -32,7 +32,7 @@
     <!-- End of Edit Bug Button -->
 
     <button class="
-      font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+      font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
               
       hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
       (click)="deleteBug()">
@@ -50,7 +50,7 @@
     <!-- End of But Title -->
 
     <!-- Beggining of Form -->
-    <form *ngIf="isEditMode || isCreating" #bugForm="ngForm" class="pt-[24px] flex flex-col gap-8">
+    <form *ngIf="isEditMode || isCreating" #bugForm="ngForm" class="pt-[12px] flex flex-col gap-8">
 
       <!-- Bug Title Input -->
       <div>
@@ -100,17 +100,17 @@
  
 
       <!-- Save and Cancel Buttons For Form -->
-      <div class="absolute flex flex-row gap-x-[24px] mt-[638px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
+      <div class="absolute flex flex-row gap-x-[24px] mt-[646px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
 
         <button (click)="saveBug(bugForm)" class="
-          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
                 
           hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Save
         </button>
 
         <button (click)="cancelEdit()" class="
-          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[20px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
                 
           hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Cancel
