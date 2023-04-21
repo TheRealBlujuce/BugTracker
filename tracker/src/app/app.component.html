@@ -2,8 +2,8 @@
 <body>
   <ng-container *ngIf="isLoggedIn; else loginForm">
     <div class="grid grid-cols-2 w-auto justify-content-center content-center">
-      <app-bug-detail class="mx-auto ml-6" (isEditingBug)="editingBug = $event" [selectedBug]="selectedBug"></app-bug-detail>
-      <app-bug-grid class="mx-auto" (bugSelected)="selectedBug = $event" [isEditing]="editingBug"></app-bug-grid>
+      <app-bug-detail class="ml-6" (isEditingBug)="editingBug = $event" [selectedBug]="selectedBug"></app-bug-detail>
+      <app-bug-grid class="" (bugSelected)="selectedBug = $event" [isEditing]="editingBug"></app-bug-grid>
     </div>
   </ng-container>
   

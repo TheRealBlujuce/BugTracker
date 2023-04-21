@@ -16,7 +16,7 @@
 </div>
 
 
-<div class="2xl:w-[896px] lg:w-[748px] 2xl:h-[680px] lg:h-[680px] bg-white rounded-[24px] mt-[20px] border-2">
+<div class="w-auto h-[680px] bg-white rounded-[24px] mt-[20px] border-2">
 
   <!-- Edit and Delete Button Container -->
   <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[432px] lg:ml-[296px] 2xl:mt-[676px] lg:mt-[676px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
@@ -45,7 +45,7 @@
   
   <div class="pt-[18px] p-[22px]">
 
-    <h1 class="font-semibold text-black text-4xl w-[696px] pb-12" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
+    <h1 class="font-semibold text-black text-4xl w-full pb-12" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
 
     <!-- End of But Title -->
 
@@ -54,14 +54,14 @@
 
       <!-- Bug Title Input -->
       <div>
-        <div class="flex flex-row">
+        <div class="flex flex-row w-auto">
           <label class="p-[8px] text-xl text-black font-semibold">Title:</label>
           <h4 *ngIf="title.touched && title.invalid" class="p-[9px] font-semibold text-lg text-pink-600 ml-[5px]">Please Add a Title</h4>
         </div>
         
         <div class="form-group">
           <input type="text" #title="ngModel" name="title" placeholder="Enter title" [ngModel]="selectedBug?.title" required class="
-          font-semibold text-xl text-black 2xl:w-[848px] lg:w-[696px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500 invalid:text-pink-600">
+          font-semibold text-xl text-black w-full h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500 invalid:text-pink-600">
         </div>
       </div>
       
@@ -75,7 +75,7 @@
         
         <div class="form-group">
           <select #priority="ngModel" name="priority" [ngModel]="selectedBug?.priority" required class="appearance-none focus:outline-none
-          font-semibold text-xl text-black 2xl:w-[848px] lg:w-[676px] h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
+          font-semibold text-xl text-black w-full h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
 
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -91,7 +91,7 @@
 
         <div class="form-group">
           <textarea name="description" placeholder="Enter description" [ngModel]="selectedBug?.description" class="appearance-none resize-none
-            font-semibold text-xl text-black 2xl:w-[848px] lg:w-[632px] xl:h-[248px] lg:h-[200px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
+            font-semibold text-xl text-black w-full h-full p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-gray-100 invalid:border-2 border-pink-500">
 
             {{ selectedBug?.description }}
           </textarea>
