@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <div class="flex flex-row">
-  <h1 class="font-semibold text-4xl mt-[24px] p-[12px]">Bug Details </h1>
+  <div>
+    <h1 class="font-semibold text-4xl mt-[24px] p-[12px]">Bug Details </h1>
+  </div>
   
-  <!-- Create New Bug Button -->
-  <button *ngIf="!isEditMode && !isCreating" class="
-    absolute 2xl:ml-[632px] lg:ml-[476px] mt-[32px] font-medium text-xl text-black w-[264px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
-            
-    hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
+  <div class="invisible md:visible">
+    <!-- Create New Bug Button -->
+    <button *ngIf="!isEditMode && !isCreating" class="
+      absolute ml-auto lg:ml-[25px] mt-[32px] font-medium text-xl text-black lg:w-[264px] md:w-[176px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 
+              
+      hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
 
-    (click)="createBug()">
-    Create New Bug
-  </button>
-  <!-- End of Create New Bug Button -->
+      (click)="createBug()">
+      Create New Bug
+    </button>
+    <!-- End of Create New Bug Button -->
+  </div>
+
 
 </div>
 
 
-<div class="w-auto h-[680px] bg-white rounded-[24px] mt-[20px] border-2">
+<div class="w-full h-[680px] bg-white rounded-[24px] mt-[20px] border-2">
 
   <!-- Edit and Delete Button Container -->
-  <div class="absolute flex flex-row gap-x-[18px] 2xl:ml-[432px] lg:ml-[296px] 2xl:mt-[676px] lg:mt-[676px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
+  <div class="absolute flex flex-row gap-x-[18px] ml-autos mt-[676px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
-        font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+        font-semibold text-xl text-black lg:w-[196px] md:w-[124px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
               
         hover:bg-black hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out"
 
@@ -32,7 +37,7 @@
     <!-- End of Edit Bug Button -->
 
     <button class="
-      font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+      font-semibold text-xl text-black lg:w-[196px] md:w-[124px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
               
       hover:bg-pink-500 hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
       (click)="deleteBug()">
@@ -100,17 +105,17 @@
  
 
       <!-- Save and Cancel Buttons For Form -->
-      <div class="absolute flex flex-row gap-x-[24px] mt-[646px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
+      <div class="absolute ml-[-22px] flex flex-row gap-x-[18px] mt-[646px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
 
         <button (click)="saveBug(bugForm)" class="
-          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
                 
           hover:bg-[#37b24d] hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Save
         </button>
 
         <button (click)="cancelEdit()" class="
-          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+          font-semibold text-xl text-black w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
                 
           hover:bg-pink-500 hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Cancel

@@ -2,8 +2,11 @@
 <body>
   <ng-container *ngIf="isLoggedIn; else loginForm">
     <div class="grid grid-cols-2 w-auto justify-content-center content-center">
-      <app-bug-detail class="ml-6" (isEditingBug)="editingBug = $event" [selectedBug]="selectedBug"></app-bug-detail>
-      <app-bug-grid class="" (bugSelected)="selectedBug = $event" [isEditing]="editingBug"></app-bug-grid>
+      <app-bug-detail class="ml-6 invisible transition-none md:visible" (isEditingBug)="editingBug = $event" [selectedBug]="selectedBug"></app-bug-detail>
+      <app-bug-grid class="invisible transition-none md:visible" (bugSelected)="selectedBug = $event" [isEditing]="editingBug"></app-bug-grid>
+    </div>
+    <div class="md:hidden mt-[-500px] p-[75px] justify-center align-middle text-center text-4xl text-black font-bold">
+      Please use a larger screen size. Mobile Devices are not supported.
     </div>
   </ng-container>
   

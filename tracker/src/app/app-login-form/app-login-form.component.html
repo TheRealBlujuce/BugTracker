@@ -1,4 +1,4 @@
-<form class="mx-auto w-[640px] h-[480px] bg-white mt-[200px] shadow-3xl rounded-[24px] border">
+<form class="mx-auto max-w-[640px] w-full h-[480px] bg-white mt-[200px] shadow-3xl rounded-[24px] border">
     <div class="p-12">
         
         <h1 class="text-black font-semibold text-4xl text-center">Login</h1>
@@ -23,9 +23,7 @@
 
         </div>
             <button (click)="onSignIn()" [disabled]="!email || !password" class="
-                absolute ml-[100px] mt-[32px] font-medium text-xl text-white w-[332px] h-[56px] p-[12px] rounded-[56px] shadow-lg enabled:bg-[#087f5b] disabled: bg-gray-500 flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
-
-                
+                absolute sm:ml-[100px] md:ml-[100px] mt-[32px] font-medium text-xl text-white max-w-[332px] w-full h-[56px] p-[12px] rounded-[56px] shadow-lg enabled:bg-[#087f5b] disabled: bg-gray-500 flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
 
                 enabled:hover:bg-[#37b24d] enabled:hover:text-white enabled:hover:cursor-pointer enabled:hover:scale-[1.12] enabled:hover:z-100 enabled:hover:transition-all ease-in-out">
                 Login
