@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<div class="flex flex-row">
-  <div>
-    <h1 class="font-semibold text-4xl mt-[24px] p-[12px]">Bug Details </h1>
-  </div>
+<div class="flex flex-row gap-2">
   
-  <div class="invisible md:visible">
+    <h1 class="font-semibold text-3xl lg:mt-[24px] md:mt-[44px] p-[12px] ">Bug Details </h1>
+
     <!-- Create New Bug Button -->
-    <button *ngIf="!isEditMode && !isCreating" class="
-      absolute ml-auto 2xl:ml-[364px] xl:ml-[200px] lg:ml-[25px] mt-[32px] font-semibold text-xl text-black/[.85] lg:w-[264px] md:w-[176px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 
+    <button *ngIf="!isEditMode && !isCreating" class=" flex-none
+      lg:mt-[28px] md:mt-[52px] font-semibold text-xl text-black/[.85] lg:max-w-[232px] md:max-w-[180px] w-full lg:h-[56px] md:h-[50px] lg:p-[12px] md:p-[8px] justify-center align-middle lg:rounded-[56px] md:rounded-[50px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 
               
       hover:bg-white/[.75] hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
 
@@ -15,19 +13,17 @@
       Create New Bug
     </button>
     <!-- End of Create New Bug Button -->
-  </div>
-
-
+    
 </div>
 
 
-<div class="w-full h-[680px] bg-white/[.6] backdrop-blur-md rounded-[24px] mt-[20px]">
+<div class="w-full lg:h-[680px] md:h-[600px] bg-white/[.6] backdrop-blur-md rounded-[24px] mt-[24px]">
 
   <!-- Edit and Delete Button Container -->
-  <div class="absolute flex flex-row gap-x-[18px] ml-autos mt-[676px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
+  <div class="absolute flex flex-row gap-x-[18px] ml-[-4px] lg:mt-[676px] md:mt-[600px] p-[12px] z-10" *ngIf="!isEditMode && !isCreating && selectedBug">
 
     <button class="
-        font-semibold text-xl text-black/[.85] lg:w-[196px] md:w-[124px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
+        font-semibold text-xl text-black/[.85] lg:w-[196px] md:w-[164px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px] mb-[18px]
               
         hover:bg-white/[.75] hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out"
 
@@ -37,7 +33,7 @@
     <!-- End of Edit Bug Button -->
 
     <button class="
-      font-semibold text-xl text-black lg:w-[196px] md:w-[124px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
+      font-semibold text-xl text-black lg:w-[196px] md:w-[164px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] flex justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100
               
       hover:bg-pink-500/[.75] hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out" 
       (click)="deleteBug()">
@@ -48,14 +44,14 @@
   </div>
   <!-- End of Button Container -->
   
-  <div class="pt-[24px] p-[48px]">
+  <div class="lg:pt-[24px] md:pt-[32px] lg:p-[48px] md:p-[24px]">
 
-    <h1 class="font-semibold text-black/[.85] text-4xl w-full pb-12" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
+    <h1 class="font-semibold text-black/[.85] text-4xl w-full lg:pb-12 md:pb-6" *ngIf="!isEditMode && !isCreating">{{ selectedBug?.title }}</h1>
 
     <!-- End of But Title -->
 
     <!-- Beggining of Form -->
-    <form *ngIf="isEditMode || isCreating" #bugForm="ngForm" class="pt-[12px] flex flex-col gap-8">
+    <form *ngIf="isEditMode || isCreating" #bugForm="ngForm" class="flex flex-col gap-8">
 
       <!-- Bug Title Input -->
       <div>
@@ -66,7 +62,7 @@
         
         <div class="form-group">
           <input type="text" #title="ngModel" name="title" placeholder="Enter title" [ngModel]="selectedBug?.title" required class="
-          font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500 invalid:text-pink-600">
+          font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] lg:ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500 invalid:text-pink-600">
         </div>
       </div>
       
@@ -80,7 +76,7 @@
         
         <div class="form-group">
           <select #priority="ngModel" name="priority" [ngModel]="selectedBug?.priority" required class="appearance-none focus:outline-none
-          font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500">
+          font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] lg:ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500">
 
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -96,7 +92,7 @@
 
         <div class="form-group">
           <textarea name="description" placeholder="Enter description" [ngModel]="selectedBug?.description" class="appearance-none resize-none
-            font-semibold text-xl text-black/[.85] w-full h-full p-[12px] ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500">
+            font-semibold text-xl text-black/[.85] w-full h-full p-[12px] lg:ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500">
 
             {{ selectedBug?.description }}
           </textarea>
@@ -105,17 +101,17 @@
  
 
       <!-- Save and Cancel Buttons For Form -->
-      <div class="absolute ml-[-22px] flex flex-row gap-x-[18px] mt-[646px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
+      <div class="absolute lg:ml-[-52px] md:ml-[-28px] flex flex-row gap-x-[18px] lg:mt-[652px] md:mt-[568px] p-[12px] z-10" *ngIf="isEditMode || isCreating">
 
         <button (click)="saveBug(bugForm)" class="
-          font-semibold text-xl text-black/[.85] w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
+          font-semibold text-xl text-black/[.85] lg:w-[196px] md:w-[164px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
                 
           hover:bg-[#37b24d]/[.75] hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Save
         </button>
 
         <button (click)="cancelEdit()" class="
-          font-semibold text-xl text-black/[.85] w-[196px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
+          font-semibold text-xl text-black/[.85] lg:w-[196px] md:w-[164px] h-[56px] p-[12px] rounded-[56px] shadow-lg bg-white/[.6] justify-center align-middle transition-all duration-[0.45s] ease-in-out scale-100 pb-[24px]
                 
           hover:bg-pink-500/[.75] hover:text-white hover:cursor-pointer hover:scale-[1.12] hover:z-100 hover:transition-all ease-in-out">
           Cancel
@@ -130,11 +126,11 @@
 
     <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.dateCreated }}</h4>
 
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[32px]">Priority:</h3>
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Priority:</h3>
 
     <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.priority }}</h4>
 
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[32px]">Description:</h3>
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Description:</h3>
 
     <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.description }}</h4>
     
