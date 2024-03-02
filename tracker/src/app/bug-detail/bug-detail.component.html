@@ -65,8 +65,20 @@
           font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] lg:ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500 invalid:text-pink-600">
         </div>
       </div>
-      
 
+      <!-- Added By Input -->
+      <div>
+        <div class="flex flex-row w-auto">
+          <label class="p-[8px] text-xl text-black/[.85] font-semibold">User Name:</label>
+          <h4 *ngIf="addedBy.touched && addedBy.invalid" class="p-[9px] font-semibold text-lg text-pink-600 ml-[5px]">User Name of Creator</h4>
+        </div>
+        
+        <div class="form-group">
+          <input type="text" #addedBy="ngModel" name="addedBy" placeholder="Enter User's Name" [ngModel]="selectedBug?.addedBy" required class="
+          font-semibold text-xl text-black/[.85] w-full h-[56px] p-[12px] lg:ml-[2px] mt-[12px] rounded-[18px] bg-white invalid:border-2 border-pink-500 invalid:text-pink-600">
+        </div>
+      </div>
+      
       <!-- Priority Dropdown Select -->
       <div>
         <div class="flex flex-row">
@@ -121,16 +133,21 @@
 
     </form>
 
-
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[8px]">Created on:</h3>
-
-    <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.dateCreated }}</h4>
-
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Priority:</h3>
+    <div class="flex flex-row gap-6">
+      <div>
+        <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[8px]">Created on</h3>
+        <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.dateCreated }}</h4>
+      </div>
+      <div>
+        <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[8px]">Created By</h3>
+        <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.addedBy}}</h4>
+      </div>
+    </div>
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Priority</h3>
 
     <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.priority }}</h4>
 
-    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Description:</h3>
+    <h3 *ngIf="!isEditMode && !isCreating && selectedBug" class="font-semibold text-3xl text-black/[.85] pt-[12px] lg:pt-[32px]">Description</h3>
 
     <h4 *ngIf="!isEditMode && !isCreating" class="font-semibold italic text-xl text-black/[.65] pt-[8px]">{{ selectedBug?.description }}</h4>
     

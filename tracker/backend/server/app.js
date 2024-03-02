@@ -8,6 +8,7 @@ app.post("/api/bugs", (req, res, next) => {
     title: req.body.title,
     priority: req.body.priority,
     dateCreated: req.body.dateCreated,
+    addedBy: req.body.addedBy,
     description: req.body.description
   })
   bug.save();

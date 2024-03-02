@@ -20,12 +20,14 @@ export class BugDetailComponent implements OnInit {
     title: '',
     priority: '',
     dateCreated: new Date().toDateString(),
+    addedBy: '',
     description: ''
   };
 
   isEditMode: boolean = false;
   isCreating: boolean = false;
   bugTitle: any = "";
+  addedBy: any = "";
   bugPriority: any = "";
   bugDescription: any = "";
 
@@ -65,6 +67,7 @@ export class BugDetailComponent implements OnInit {
         title: form.value.title,
         priority: form.value.priority,
         dateCreated: today.toDateString(),
+        addedBy: form.value.addedBy,
         description: form.value.description
       };
       this.bugCreated.emit(this.newBug);
@@ -72,6 +75,7 @@ export class BugDetailComponent implements OnInit {
     }
     else if (this.selectedBug) {
       this.bugTitle = form.value.title;
+      this.addedBy = form.value.addedBy;
       this.bugPriority = form.value.priority;
       if (form.value.description != null){
         this.bugDescription = form.value.description;
@@ -86,6 +90,7 @@ export class BugDetailComponent implements OnInit {
         title: this.bugTitle,
         priority: this.bugPriority,
         dateCreated: this.selectedBug.dateCreated,
+        addedBy: this.addedBy,
         description: this.bugDescription
       };
 

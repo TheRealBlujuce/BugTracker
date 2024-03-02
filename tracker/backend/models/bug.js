@@ -6,6 +6,7 @@ const bugSchema = new Schema({
   title: { type: String, required: true },
   priority: { type: String, required: true },
   dateCreated: { type: Date, required: true },
+  addedBy: { type: String, required: true },
   description: { type: String, required: true }
 });
 

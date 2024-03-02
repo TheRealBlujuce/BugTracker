@@ -27,7 +27,6 @@ const db = firebase.database();
 
 const bugsRef = db.ref('bugs');
 
-
 const app = express();
 app.use(compression())
 
